@@ -217,8 +217,6 @@ function syncPrice(pid,num,price){
 			<thead>
 				<tr>
 					<th class="selectAndImage">
-							<img selectit="false" class="selectAllItem" src="img/site/cartNotSelected.png">				
-					全选
 					
 					</th>
 					<th>商品信息</th>

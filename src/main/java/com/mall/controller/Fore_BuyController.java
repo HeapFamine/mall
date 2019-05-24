@@ -151,6 +151,7 @@ public class Fore_BuyController {
         model.addAttribute("o", o);
         return "fore/confirmPay";
     }
+    
     @RequestMapping("foreorderConfirmed")
     public String orderConfirmed( Model model,int oid) {
         Order o = orderService.get(oid);
@@ -159,6 +160,7 @@ public class Fore_BuyController {
         orderService.update(o);
         return "fore/orderConfirmed";
     }
+    
     @RequestMapping("foredeleteOrder")
     @ResponseBody
     public String deleteOrder( Model model,int oid){
