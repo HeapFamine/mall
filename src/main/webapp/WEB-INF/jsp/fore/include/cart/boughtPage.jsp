@@ -142,24 +142,24 @@ $(function(){
 								<div class="orderListItemPriceWithTransport">(含运费：￥0.00)</div>
 							</td>
 							<td valign="top" rowspan="${fn:length(o.orderItems)}" class="orderListItemButtonTD orderItemOrderInfoPartTD" width="100px">
-								<c:if test="${o.status=='waitConfirm' }">
+								<c:if test="${o.status=='waitConfirm'}">
 									<a href="foreconfirmPay?oid=${o.id}">
 										<button class="orderListItemConfirm">确认收货</button>
 									</a>
 								</c:if>
-								<c:if test="${o.status=='waitPay' }">
+								<c:if test="${o.status=='waitPay'}">
 									<a href="forealipay?oid=${o.id}&total=${o.total}">
 										<button class="orderListItemConfirm">付款</button>
 									</a>								
 								</c:if>
 								
-								<c:if test="${o.status=='waitDelivery' }">
+								<c:if test="${o.status=='waitDelivery'}">
 									<span>待发货</span>
 <%-- 									<button class="btn btn-info btn-sm ask2delivery" link="admin_order_delivery?id=${o.id}">催卖家发货</button> --%>
 									
 								</c:if>
 
-								<c:if test="${o.status=='waitReview' }">
+								<c:if test="${o.status=='waitReview'}">
 									<a href="forereview?oid=${o.id}">
 										<button  class="orderListItemReview">评价</button>
 									</a>

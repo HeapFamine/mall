@@ -101,7 +101,7 @@
 			<div class="concent">
 				<!--地址 -->
 				<div class="paycont">
-				<form action="forecreateOrder" method="post" class="am-form am-form-horizontal">
+				<form action="buyone_createOrder" method="post" class="am-form am-form-horizontal">
 					<div class="add-dress">
 						<!--标题 -->
 						<div class="am-cf am-padding">
@@ -169,55 +169,54 @@
 							<tr id="J_BundleList_s_1911116345_1" class="item-list">
 								<div id="J_Bundle_s_1911116345_1_0" class="bundle  bundle-last">
 									<div class="bundle-main">
-										<c:forEach items="${ois}" var="oi" varStatus="st" >
 										<ul class="item-content clearfix">
+										
+											<div class="pay-phone">
+												<li class="td td-item">
+													<div class="item-pic">
+														<a href="foreproduct?pid=${p.id}" class="J_MakePoint">
+															<img src="img/productSingle_middle/${p.firstProductImage.id}.png" class="itempic J_ItemImg"></a>
+													</div>
+													<div class="item-info">
+														<div class="item-basic-info">
+															<a href="foreproduct?pid=${p.id}" target="_blank" title="${p.name}" class="item-title J_MakePoint" data-point="tbcart.8.11">${p.name}</a>
+														</div>
+													</div>
+												</li>
+												<li class="td td-info">
+													<div class="item-props">
+														<span class="sku-line">${p.subTitle}</span>
+													</div>
+												</li>
+												<li class="td td-price">
+													<div class="item-price price-promo-promo">
+														<div class="price-content">
+															<em class="J_Price price-now">${p.promotePrice}</em>
+														</div>
+													</div>
+												</li>
+											</div>
 
-												<div class="pay-phone">
-													<li class="td td-item">
-														<div class="item-pic">
-															<a href="foreproduct?pid=${oi.product.id}" class="J_MakePoint">
-																<img src="img/productSingle_middle/${oi.product.firstProductImage.id}.png" class="itempic J_ItemImg"></a>
-														</div>
-														<div class="item-info">
-															<div class="item-basic-info">
-																<a href="foreproduct?pid=${oi.product.id}" target="_blank" title="${oi.product.name}" class="item-title J_MakePoint" data-point="tbcart.8.11">${oi.product.name}</a>
-															</div>
-														</div>
-													</li>
-													<li class="td td-info">
-														<div class="item-props">
-															<span class="sku-line">${oi.product.subTitle}</span>
-														</div>
-													</li>
-													<li class="td td-price">
-														<div class="item-price price-promo-promo">
-															<div class="price-content">
-																<em class="J_Price price-now">${oi.product.promotePrice}</em>
-															</div>
-														</div>
-													</li>
+											<li class="td td-amount">
+												<div class="td-inner">
+													<em tabindex="0" class="J_ItemSum number">${num}</em>
 												</div>
-	
-												<li class="td td-amount">
-													<div class="td-inner">
-														<em tabindex="0" class="J_ItemSum number">${oi.number}</em>
+											</li>
+											<li class="td td-sum">
+												<div class="td-inner">
+													<em tabindex="0" class="J_ItemSum number">${p.promotePrice*num}</em>
+												</div>
+											</li>
+											<li class="td td-oplist">
+												<div class="td-inner">
+													<span class="phone-title">配送方式</span>
+													<div class="pay-logis">
+														包邮
 													</div>
-												</li>
-												<li class="td td-sum">
-													<div class="td-inner">
-														<em tabindex="0" class="J_ItemSum number">${oi.number*oi.product.promotePrice}</em>
-													</div>
-												</li>
-												<li class="td td-oplist">
-													<div class="td-inner">
-														<span class="phone-title">配送方式</span>
-														<div class="pay-logis">
-															包邮
-														</div>
-													</div>
-												</li>
+												</div>
+											</li>
+
 										</ul>
-										</c:forEach>	
 										<div class="clear"></div>
 
 									</div>
@@ -241,7 +240,7 @@
 							<!--含运费小计 -->
 							<div class="buy-point-discharge ">
 								<p class="price g_price ">
-									合计（含运费） <span>¥</span><em class="pay-sum">${total}</em>
+									合计（含运费） <span>¥</span><em class="pay-sum">${p.promotePrice*num}</em>
 								</p>
 							</div>
 
@@ -251,7 +250,7 @@
 									<div class="box">
 										<div tabindex="0" id="holyshit267" class="realPay"><em class="t">实付款：</em>
 											<span class="price g_price ">
-                                    <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee">${total}</em>
+                                    <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee">${p.promotePrice*num}</em>
 											</span>
 										</div>
 									</div>

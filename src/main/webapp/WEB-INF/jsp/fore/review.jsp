@@ -2,7 +2,4 @@
 	pageEncoding="UTF-8" isELIgnored="false"%>
 
 <%@include file="include/header.jsp"%>
-<%@include file="include/top.jsp"%>
-<%@include file="include/search.jsp"%>
 <%@include file="include/cart/reviewPage.jsp"%>
-<%@include file="include/modal.jsp" %>

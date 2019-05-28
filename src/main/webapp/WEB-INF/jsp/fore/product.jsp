@@ -119,17 +119,6 @@
 					<li><a href="#">分类</a></li>
 					<li class="am-active">内容</li>
 				</ol>
-				<script type="text/javascript">
-					$(function() {});
-					$(window).load(function() {
-						$('.flexslider').flexslider({
-							animation: "slide",
-							start: function(slider) {
-								$('body').removeClass('loading');
-							}
-						});
-					});
-				</script>
 
 				<!--放大镜-->
 
