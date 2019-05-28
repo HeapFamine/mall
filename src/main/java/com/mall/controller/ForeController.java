@@ -142,8 +142,9 @@ public class ForeController {
         model.addAttribute("p", p);
         model.addAttribute("o", o);
         model.addAttribute("reviews", reviews);
-        return "fore/review";
+        return "fore/commentlist";
     }
+    
     @RequestMapping("foredoreview")
     public String doreview( Model model,HttpSession session,@RequestParam("oid") int oid,@RequestParam("pid") int pid,String content) {
         Order o = orderService.get(oid);
@@ -161,7 +162,7 @@ public class ForeController {
         review.setUid(user.getId());
         reviewService.add(review);
 
-        return "redirect:forereview?oid="+oid+"&showonly=true";
+        return "redirect:foreproduct?pid="+pid;
     }
 
 }
