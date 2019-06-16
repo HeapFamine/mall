@@ -211,7 +211,12 @@
 						<div class="menu-hd MyShangcheng"><a href="forebought" target="_top"><i class="am-icon-user am-icon-fw"></i>我的订单</a></div>
 					</div>
 					<div class="topMessage mini-cart">
-						<div class="menu-hd"><a id="mc-menu-hd" href="forecart" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">${cartTotalItemNumber}</strong></a></div>
+						<div class="menu-hd">
+						<a id="mc-menu-hd" href="forecart" target="_top">
+						<i class="am-icon-shopping-cart  am-icon-fw"></i>
+						<span>购物车</span>
+						<strong id="J_MiniCartNum" class="h">${cartTotalItemNumber}</strong></a>
+						</div>
 					</div>
 				</ul>
 				</div>
